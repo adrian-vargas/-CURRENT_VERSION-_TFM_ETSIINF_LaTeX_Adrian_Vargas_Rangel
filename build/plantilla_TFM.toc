@@ -39,33 +39,29 @@
 \contentsline {section}{\numberline {3.5}Herramientas de Interpretabilidad para Modelos Transparentes}{32}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}InterpretML}{32}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}Yellowbrick}{33}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Anchors}{34}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}DiCE}{34}{subsection.3.5.4}%
-\contentsline {section}{\numberline {3.6}Resumen}{35}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Estado del Arte}{37}{chapter.4}%
-\contentsline {section}{\numberline {4.1}XAI para Modelos de Caja Negra}{38}{section.4.1}%
-\contentsline {section}{\numberline {4.2}XAI para Modelos Transparentes}{39}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Métricas de Evaluación de la Explicabilidad en Modelos Transparentes}{39}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Número de Características}{39}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Complejidad de la Estructura del Modelo}{40}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Métricas para la Evaluación Humana de la Interpretabilidad}{40}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Métricas cualitativas}{41}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Métricas cuantitativas}{41}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Herramientas de Interpretabilidad para Modelos Transparentes}{42}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}InterpretML}{42}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Yellowbrick}{43}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Anchors}{45}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}DiCE: Explicaciones Contrafactuales Diversas}{45}{subsection.4.5.4}%
-\contentsline {section}{\numberline {4.6}Resumen}{47}{section.4.6}%
-\contentsline {chapter}{\numberline {5}Metodología}{49}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Datos utilizados}{49}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Implementación de los Modelos}{51}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Diseño del Cuestionario}{52}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Desarrollo de la Aplicación Web}{52}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Herramientas de Interpretabilidad}{52}{subsection.5.1.4}%
-\contentsline {chapter}{\numberline {6}Resultados y conclusiones}{53}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Desafíos en la Implementación}{53}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Implementación del Cuestionario en Moodle}{53}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Diseño del Experimento}{54}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Cuestionario Utilizado en el Experimento}{54}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Conclusiones}{55}{section.6.5}%
+\contentsline {subsection}{\numberline {3.5.3}Anchors}{35}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}DiCE: Explicaciones Contrafactuales Diversas}{35}{subsection.3.5.4}%
+\contentsline {section}{\numberline {3.6}Resumen}{37}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Metodología}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Datos utilizados}{39}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Implementación de los Modelos}{41}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Diseño del Cuestionario}{42}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Desarrollo de la Aplicación Web}{42}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Herramientas de Interpretabilidad}{42}{subsection.4.1.4}%
+\contentsline {chapter}{\numberline {5}Resultados}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Desafíos en la Implementación}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Implementación del Cuestionario en Moodle}{43}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Diseño del Experimento}{44}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Cuestionario Utilizado en el Experimento}{44}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Conclusiones}{45}{section.5.5}%
+\contentsline {chapter}{\numberline {A}Anexo}{51}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Cuestionario para Evaluar la Interpretabilidad de los Modelos}{51}{section.Alph1.1}%
+\contentsline {subsection}{\numberline {A.1.1}Preguntas de Exactitud}{52}{subsection.Alph1.1.1}%
+\contentsline {subsubsection}{\numberline {A.1.1.1}Preguntas resueltas por ambos modelos}{52}{subsubsection.Alph1.1.1.1}%
+\contentsline {subsubsection}{\numberline {A.1.1.2}Preguntas ambiguas}{53}{subsubsection.Alph1.1.1.2}%
+\contentsline {subsubsection}{\numberline {A.1.1.3}Preguntas exclusivas para cada modelo}{53}{subsubsection.Alph1.1.1.3}%
+\contentsline {subsection}{\numberline {A.1.2}Preguntas de Detección de Error}{54}{subsection.Alph1.1.2}%
+\contentsline {subsubsection}{\numberline {A.1.2.1}Preguntas resueltas por ambos modelos}{54}{subsubsection.Alph1.1.2.1}%
+\contentsline {subsubsection}{\numberline {A.1.2.2}Preguntas ambiguas}{55}{subsubsection.Alph1.1.2.2}%
+\contentsline {subsubsection}{\numberline {A.1.2.3}Preguntas exclusivas para cada modelo}{55}{subsubsection.Alph1.1.2.3}%
+\contentsline {section}{\numberline {A.2}Implementación del Cuestionario en Moodle}{56}{section.Alph1.2}%

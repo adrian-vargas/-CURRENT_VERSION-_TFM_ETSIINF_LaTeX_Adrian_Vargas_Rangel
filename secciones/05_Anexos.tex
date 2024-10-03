@@ -1,6 +1,6 @@
-\chapter*{Anexo}
+\chapter{Anexo}
 
-\section*{Cuestionario para Evaluar la Interpretabilidad de los Modelos}
+\section{Cuestionario para Evaluar la Interpretabilidad de los Modelos}
 
 El cuestionario incluye los siguientes tipos de preguntas:
 \begin{itemize}
@@ -25,9 +25,9 @@ Para garantizar una evaluación completa y detallada, se propone un cuestionario
     \end{itemize}
 \end{itemize}
 
-\subsection*{Preguntas de Exactitud}
+\subsection{Preguntas de Exactitud}
 
-\subsubsection*{Preguntas resueltas por ambos modelos}
+\subsubsection{Preguntas resueltas por ambos modelos}
 \begin{itemize}
     \item Observación: \texttt{absences = 1, failures = 1, studytime = 2, age = 18}\\
     Predicción:
@@ -84,7 +84,7 @@ Para garantizar una evaluación completa y detallada, se propone un cuestionario
     Modelo: Ambos modelos predicen No Aprobado
 \end{itemize}
 
-\subsubsection*{Preguntas ambiguas}
+\subsubsection{Preguntas ambiguas}
 \begin{itemize}
     \item Observación: \texttt{absences = 3, failures = 1, studytime = 2, age = 17}\\
     Predicción:
@@ -114,7 +114,7 @@ Para garantizar una evaluación completa y detallada, se propone un cuestionario
     Modelo: La alta variabilidad en \texttt{studytime (4)} podría no estar claramente definida en las reglas de los modelos causando incertidumbre.
 \end{itemize}
 
-\subsubsection*{Preguntas exclusivas para cada modelo}
+\subsubsection{Preguntas exclusivas para cada modelo}
 \begin{itemize}
     \item Observación: \texttt{absences = 2, failures = 1, studytime = 2, age = 16}\\
     Predicción:
@@ -144,9 +144,9 @@ Para garantizar una evaluación completa y detallada, se propone un cuestionario
     Modelo: IDS predice No Aprobado; DT predice Aprobado.
 \end{itemize}
 
-\subsection*{Preguntas de Detección de Error}
+\subsection{Preguntas de Detección de Error}
 
-\subsubsection*{Preguntas resueltas por ambos modelos}
+\subsubsection{Preguntas resueltas por ambos modelos}
 \begin{itemize}
     \item Observación: \texttt{absences = 2, failures = 0, studytime = 1, age = 16}\\
     Predicción del modelo: No aprobado\\
@@ -189,7 +189,7 @@ Para garantizar una evaluación completa y detallada, se propone un cuestionario
     Modelo: Ambos modelos predicen No Aprobado
 \end{itemize}
 
-\subsubsection*{Preguntas ambiguas}
+\subsubsection{Preguntas ambiguas}
 \begin{itemize}
     \item Observación: \texttt{absences = 4, failures = 1, studytime = 2, age = 17}\\
     Predicción del modelo: No aprobado\\
@@ -222,7 +222,7 @@ Para garantizar una evaluación completa y detallada, se propone un cuestionario
     Modelo: La combinación de valores puede no estar claramente definida en las reglas de los modelos generando incertidumbre.
 \end{itemize}
 
-\subsubsection*{Preguntas exclusivas para cada modelo}
+\subsubsection{Preguntas exclusivas para cada modelo}
 \begin{itemize}
     \item Observación: \texttt{absences = 3, failures = 0, studytime = 1, age = 18}\\
     Predicción del modelo: No aprobado\\
@@ -265,7 +265,7 @@ Para garantizar una evaluación completa y detallada, se propone un cuestionario
     Modelo: IDS predice No Aprobado; DT predice Aprobado.
 \end{itemize}
 
-\section*{Implementación del Cuestionario en Moodle}
+\section{Implementación del Cuestionario en Moodle}
 
 Aunque no fue posible implementar el cuestionario completo en el entorno de Moodle de la universidad debido al acercamiento del fin de curso y a restricciones de políticas internas, se desarrolló un script en Moodle ya que no se encontraron soluciones en GitHub ni en Moodle para que el cálculo se realizara de forma automatizada y se encontró que Moodle ofrece la posibilidad de revisar el intento de cada estudiante mediante una tabla debajo de cada pregunta que brinda el historial de la interacción del estudiante con esa pregunta y que incluye marcas de tiempo para cada acción, lo que lo convierte en una opción accesible frente a otras soluciones de pago. 
 
@@ -282,7 +282,7 @@ Con la información que nos proporciona Mooodle, se puede calcular manualmente e
     \centering
     \includegraphics[width=0.9\linewidth]{include/moodle_step2.png}
     \caption{Revisión del intento}
-    \label{fig:nasa-tlx-propio}
+    \label{fig:nasa-tlx-propio_}
 \end{figure}
 
 A continuación, se describe el proceso de uso del script de webscrapping para la extracción y cálculo de los tiempos de respuesta:
@@ -304,7 +304,7 @@ Las pruebas con las preguntas dummy confirmaron que el sistema de Moodle puede s
     \centering
     \includegraphics[width=0.9\linewidth]{include/resultados_excel.png}
     \caption{EJemplo de registro de tiempo de respuesta por pregunta. Cada columna de B a D representa el cuestionario de un participante individual}
-    \label{fig:nasa-tlx-propio}
+    \label{fig:nasa-tlx-propio__}
 \end{figure}
 
 

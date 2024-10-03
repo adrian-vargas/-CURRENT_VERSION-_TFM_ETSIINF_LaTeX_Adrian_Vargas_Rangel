@@ -20,7 +20,6 @@ Ambos enfoques son complementarios y se aplican en diferentes contextos. Mientra
 
 En este TFM, la interpretabilidad se analizará en el contexto de modelos de decisión interpretables, específicamente en los \textit{Interpretable Decision Sets} (IDS) y los árboles de decisión (DT). Se explorará cómo la estructura del modelo, la presentación de resultados y otros factores influyen en la percepción de interpretabilidad y en la capacidad de los usuarios para detectar errores.
 
-
 \section{Criterios de interpretabilidad}
 
 Esta sección se basa en los trabajos de Murdoch et al. (2019) \cite{murdoch2019interpretable} y Rudin (2019) \cite{Rudin-2019}, quienes destacan, desde diferentes perspectivas, la importancia de utilizar modelos de decisión que sean inherentemente interpretables en aplicaciones donde la transparencia es crucial, como la medicina, la justicia o la toma de decisiones críticas en entornos regulatorios. 
@@ -49,7 +48,6 @@ La sparsidad se promueve a través del término de penalización \(\lambda \|\th
     \caption{Relación entre sparsidad y selección de modelos utilizando LASSO. El gráfico de la izquierda muestra la tasa de selección de modelos exactos (círculos), sobre-modelados (cuadrados) y sub-modelados (triángulos) en función del nivel de ruido en la señal (SNR). Un modelo exacto tiene solo las variables relevantes, mientras que un sobre-modelado incluye variables adicionales innecesarias (términos espurios) y un sub-modelado omite variables relevantes. El gráfico de la derecha muestra la media y desviación estándar del número de términos espurios seleccionados en modelos sobre-modelados, destacando cómo LASSO minimiza la inclusión de estas variables irrelevantes, promoviendo así la sparsidad y la interpretabilidad del modelo. Adaptado de \cite{kukreja2006least}.}
     \label{fig:lasso}
 \end{figure}
-
 
 \subsection{Simulabilidad}
 
@@ -278,7 +276,6 @@ donde \(I(S)\) es la entropía del conjunto de datos \(S\) y \(I(S|A)\) es la en
 
 El algoritmo encuentra iterativamente reglas que cubren el mayor número de ejemplos de una misma clase, organizándolas en una lista secuencial. Cada regla se aplica en orden hasta que todos los ejemplos han sido clasificados.
 
-
 \begin{algorithm}[H]
 \caption{Algoritmo para Listas de Decisión}
 \KwIn{Conjunto de datos de entrenamiento $D = \{(x_1, y_1), (x_2, y_2), \ldots, (x_m, y_m)\}$}
@@ -299,15 +296,7 @@ El algoritmo encuentra iterativamente reglas que cubren el mayor número de ejem
 
 \subsection{Conjuntos Interpretables de Decisión (IDS)}
 
-Esta sección se basa en el trabajo de Lakkaraju et al. (2016) \cite{lakkaraju-2016}, quienes proponen un marco para construir modelos predictivos que son altamente precisos y al mismo tiempo altamente interpretables. Un conjunto de decisión es un conjunto de predicados lógicos asociados a una etiqueta de clase. Las variables de los predicados corresponden a los atributos del problema de clasificación (los \emph{features}). El predicado sigue la forma “si [condición(es)] entonces [clase]”. Cada predicado está compuesto por ítems (predicados más pequeños) unidos por conjunción. Se dice que el conjunto asigna una clase a un ejemplo si el predicado es verdadero. En caso de empates (varios predicados son verdaderos, pero asignan una clase diferente), se utiliza alguna regla de desempate, generalmente \emph{ad-hoc} para cada aplicación, como dar prioridad a la regla más específica o a la primera regla que se cumpla. La figura \ref{fig:ids-example} muestra un ejemplo de un conjunto de decisión, adaptado de este trabajo. 
-
-
-
-
-
-
-
-
+Esta sección se basa en el trabajo de Lakkaraju et al. (2016) \cite{lakkaraju-2016}, quienes proponen un marco para construir modelos predictivos que son altamente precisos y al mismo tiempo altamente interpretables. Un conjunto de decisión es un conjunto de predicados lógicos asociados a una etiqueta de clase. Las variables de los predicados corresponden a los atributos del problema de clasificación (los \emph{features}). El predicado sigue la forma “si [condición(es)] entonces [clase]”. Cada predicado está compuesto por ítems (predicados más pequeños) unidos por conjunción. Se dice que el conjunto asigna una clase a un ejemplo si el predicado es verdadero. En caso de empates (varios predicados son verdaderos, pero asignan una clase diferente), se utiliza alguna regla de desempate, generalmente \emph{ad-hoc} para cada aplicación, como dar prioridad a la regla más específica o a la primera regla que se cumpla. La figura \ref{fig:ids-unificado} muestra un ejemplo de un conjunto de decisión, adaptado de este trabajo. 
 
 \begin{figure}[H]
 \centering
@@ -407,27 +396,6 @@ Esta sección se basa en el trabajo de Lakkaraju et al. (2016) \cite{lakkaraju-2
 \label{fig:ids-unificado}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \begin{figure}[H]
 \centering
 \fbox{
@@ -444,7 +412,6 @@ Esta sección se basa en el trabajo de Lakkaraju et al. (2016) \cite{lakkaraju-2
 }
 \caption{Reglas de decisión basadas en el conjunto interpretable de decisión de la Figura \ref{fig:ids-unificado}.}
 \end{figure}
-
 
 Al igual que las listas de decisión, los conjuntos de decisión ofrecen ventajas sobre otros métodos de aprendizaje automático debido a su sencillez de inferencia e interpretabilidad \cite{Ignatiev-2018, Liu-2015}. Como se mencionó anteriormente, la interpretabilidad se refiere a la facilidad con que un experto humano puede entender y razonar sobre el mecanismo utilizado por el modelo para asignar una clase \cite{Rudin-2019}. Sin embargo, a diferencia de las listas de decisión, que por su naturaleza anidada pueden requerir razonamiento sobre múltiples características y recordar decisiones previas, los conjuntos de decisión solo requieren evaluar predicados simples de forma independiente, lo que los hace aún más interpretables.
 
@@ -464,7 +431,6 @@ Dicha “facilidad de interpretación” es difícil de cuantificar. Aunque la e
 donde \( |R_i| \) y \( |R_j| \) representan el número de instancias cubiertas por las reglas \( R_i \) y \( R_j \), respectivamente. Minimizar la superposición es crucial para asegurar que las reglas no entren en conflicto y que cada regla cubra una parte distinta del espacio de datos, facilitando la claridad y precisión de la interpretación.
 
 \end{itemize}
-
 
 Estas métricas son integradas en una ‘función objetivo’ dentro del algoritmo de construcción de IDS. El objetivo del algoritmo no es solo maximizar la precisión predictiva, sino también encontrar un equilibrio que minimice la complejidad del modelo, resultando en conjuntos de decisión más simples y comprensibles. La función objetivo pondera cada una de estas métricas para guiar el proceso de selección de reglas durante el entrenamiento del modelo. Así, se priorizan reglas que ofrecen un buen rendimiento predictivo, pero que al mismo tiempo mantienen la simplicidad y claridad necesarias para ser interpretadas fácilmente por expertos humanos.
 
@@ -503,7 +469,6 @@ El procedimiento del algoritmo SLS se puede describir en los siguientes pasos:
     
     \item \textit{Optimización de la Complejidad del Modelo:} Después de añadir todas las reglas que cumplen con los criterios anteriores, el conjunto de reglas \( R \) es ordenado para optimizar su aplicabilidad y minimizar la complejidad del modelo.
 \end{itemize}
-
 
 El uso del algoritmo SLS permite construir un conjunto de reglas interpretables de alta calidad que no solo logra una precisión predictiva comparable a otros modelos más complejos, sino que también facilita la comprensión por parte de usuarios no expertos. A continuación, se presenta el algoritmo en pseudocódigo:
 
@@ -584,7 +549,6 @@ Por un lado, las visualizaciones eficaces pueden mejorar la transparencia y faci
     \caption{Adaptación de las condiciones experimentales de Poursabzi et al. \cite{Poursabzi-2021}, que muestran cómo la presentación del modelo afecta la confianza del usuario.}
     \label{fig:confianza_visualizaciones}
 \end{figure}
-
 
 Por otro lado, la confianza en las visualizaciones puede llevar a una comprensión superficial o a una confianza excesiva en los resultados. Investigaciones han demostrado que los usuarios tienden a confiar más en modelos cuyos resultados están respaldados por visualizaciones atractivas, incluso si no comprenden completamente los algoritmos subyacentes \cite{Kaur-2020}. Por ejemplo, en la Figura \ref{fig:confianza_experimento}, se ilustra cómo la presentación de los resultados puede influir en la percepción de los usuarios. Este fenómeno puede llevar a que los usuarios acepten las decisiones de los modelos sin cuestionarlas o sin detectar posibles errores, simplemente porque la visualización es persuasiva. 
 
@@ -693,10 +657,6 @@ También se han examinado métodos basados en reglas, como el \textit{descubrimi
 
 Estos fundamentos teóricos proporcionan un marco sólido para el diseño del cuestionario de este TFM.
 
-% ##############################################################
-% ##############################################################
-% ##############################################################
-
 \chapter{Estado del Arte}
 
 La Inteligencia Artificial Explicable (XAI, por sus siglas en inglés de \emph{eXplainable Artificial Intelligence}) se refiere a un conjunto de métodos y técnicas diseñados para hacer que los modelos de aprendizaje automático sean comprensibles e interpretables para los usuarios humanos. El objetivo es permitir a los usuarios confiar y gestionar de manera efectiva los sistemas basados en aprendizaje automático \cite{gunning2019xai}. 
@@ -735,7 +695,6 @@ En los últimos años, la comunidad científica se ha interesado en desarrollar 
 
 Los métodos y técnicas desarrollados en XAI se pueden agrupar en dos categorías principales según el tipo de modelo: modelos de caja negra y modelos transparentes \cite{curso-xai}. Estas categorías se subdividen en técnicas específicas, como se muestra en el Cuadro \ref{fig:cuadro-xai}.
 
-
 \section{XAI para Modelos de Caja Negra}
 
 Aunque este trabajo no se enfoca en métodos aplicables a modelos de caja negra, es importante mencionarlos para brindar un panorama completo de la Inteligencia Artificial Explicable (XAI). En general, un \emph{modelo de caja negra} es aquel cuyo funcionamiento interno es desconocido o no es interpretable. Esto puede deberse a que su acceso está restringido (por propiedad intelectual) o porque su mecanismo de predicción es inherentemente complejo, como en el caso de las redes neuronales \cite{curso-xai, Rudin-2019}.
@@ -756,7 +715,6 @@ Existen tres tipos principales de técnicas para abordar la explicabilidad en mo
     \end{itemize}
 \end{itemize}
 
-
 \section{XAI para Modelos Transparentes}
 
 Los modelos transparentes son aquellos que no solo exponen el mecanismo mediante el cual generan las predicciones, sino que este proceso es fácilmente comprensible para un usuario humano. Un ejemplo clásico es la regresión lineal: es fácil entender cómo este modelo genera una predicción (mediante multiplicaciones por coeficientes y una suma), y también es fácil interpretar el significado de estos coeficientes (el valor de cada coeficiente indica el efecto de la variable correspondiente sobre la predicción).
@@ -766,11 +724,6 @@ En principio, se presume que los modelos transparentes son interpretables, es de
 Para mejorar la interpretabilidad de estos modelos, se pueden aplicar técnicas de regularización como la \textit{Lasso}, que promueven la \textit{sparsidad} al reducir el número de variables que tienen un impacto significativo en las predicciones. Esta técnica puede observarse en la Figura \ref{fig:lasso}, donde se ilustra cómo Lasso minimiza la inclusión de variables irrelevantes, mejorando así la simplicidad y la claridad del modelo.
 
 De esta forma, se facilita que el usuario enfoque su atención solo en las características más importantes, lo que mejora la comprensión general del modelo.
-
-
-
-
-
 
 \section{Métricas de Evaluación de la Explicabilidad en Modelos Transparentes}
 
@@ -791,201 +744,6 @@ La \textit{complejidad de la estructura} de un modelo transparente también afec
 Por ejemplo, en los árboles de decisión, tanto el número de ramas por nodo como la profundidad del árbol influyen en su interpretabilidad. Un árbol con muchas ramas o de gran profundidad puede ser difícil de entender, contraviniendo el principio de \textit{simulabilidad} (ver Figura \ref{fig:decision_tree}), que sugiere que los modelos deben ser fáciles de reproducir y comprender por humanos. Para mitigar esto, \cite{Lin-2020} recomienda el uso de árboles binarios (cada nodo tiene solo dos ramas), y la programación dinámica para limitar la profundidad del árbol, controlando así la complejidad del modelo.
 
 Para los conjuntos de decisión, \cite{lakkaraju-2016} sugiere el uso de listas simples de reglas, sin anidación, ya que se considera que son más fáciles de entender que las secuencias de reglas anidadas. Esta preferencia por la simplicidad y la claridad se alinea con la noción de \textit{parsimonia} (ver Figura \ref{fig:parsimonia}), donde se favorecen las soluciones más simples y directas.
-
-
-
-
-\section{Métricas para la Evaluación Humana de la Interpretabilidad}
-
-Esta sección presenta las métricas propuestas en la literatura para la evaluación humana de la interpretabilidad. Dichas métricas son esenciales para determinar si los usuarios pueden entender un modelo de aprendizaje automático, especialmente cuando se trata de modelos transparentes, como los discutidos en la Figura \ref{fig:modularidad_ebm} sobre la modularidad y en la Figura \ref{fig:decision_tree} sobre la simulabilidad. Estas métricas se dividen en dos categorías principales: cualitativas y cuantitativas, dependiendo de su enfoque para medir el entendimiento.
-
-\subsection{Métricas cualitativas}
-
-Las métricas cualitativas buscan evaluar la capacidad del usuario para comprender el modelo mediante la recopilación de datos no numéricos. Generalmente, estos datos se obtienen a través de entrevistas semi-estructuradas o preguntas contextualizadas \cite{Kaur-2020}. Tal como se ilustra en la Figura \ref{fig:decision_tree}, los modelos que favorecen una estructura simple, como los árboles de decisión, facilitan la comprensión del proceso de decisión por parte del usuario. En este contexto, se puede emplear una metodología en la que el usuario tenga acceso al modelo o a visualizaciones relacionadas, y un investigador formule preguntas, asigne tareas o simplemente escuche al usuario para determinar su grado de entendimiento.
-
-Por ejemplo, \cite{Kaur-2020} realizó entrevistas semi-estructuradas para identificar las principales dificultades que enfrentan los científicos de datos al interpretar modelos complejos. Basándose en estos resultados, se diseñaron entrevistas adicionales, utilizando el mismo enfoque mostrado en la Figura \ref{fig:contexto_audiencia}, para determinar cómo los diferentes grupos de usuarios perciben la interpretabilidad de los modelos en función de su contexto y necesidades específicas.
-
-\subsection{Métricas cuantitativas}
-
-Las métricas cuantitativas, a diferencia de las cualitativas, se enfocan en la recopilación de datos numéricos que puedan ser analizados de manera estadística. Similar a cómo se evaluó la interpretabilidad mediante la reducción de características en la Figura \ref{fig:lasso}, estas métricas intentan medir la capacidad del usuario para comprender un modelo a través de la exactitud de sus predicciones o la eficiencia con la que completan tareas basadas en el modelo.
-
-La métrica más común es la exactitud o el error de desviación \cite{lakkaraju-2016, Poursabzi-2021}, que consiste en solicitar al usuario que realice predicciones utilizando el modelo, como se describe en la Figura \ref{fig:modularidad_ebm}, donde los Modelos Aditivos Generalizados (GAMs) descomponen las predicciones en componentes interpretables. Esta métrica permite determinar si un usuario es capaz de seguir el razonamiento del modelo y entender cómo se llega a una predicción específica.
-
-Adicionalmente, se emplean otras métricas como el \textit{error de simulación} \cite{Poursabzi-2021}, en las que se muestra al usuario una serie de ejemplos y se le pide realizar predicciones para evaluar su capacidad de aprendizaje sin ayuda del modelo. De manera complementaria, el uso de cuestionarios como el NASA-TLX (\emph{Task Load Index}) \cite{Hart-1988}, que puede ayudar a cuantificar la carga cognitiva que experimentan los usuarios al interactuar con el modelo, proporcionando una medida indirecta de la interpretabilidad.
-
-En conjunto, estas métricas ofrecen una visión integral de cómo los usuarios perciben la interpretabilidad de los modelos de aprendizaje automático, conectando las técnicas teóricas presentadas en la sección de fundamentos con la evaluación práctica de la experiencia del usuario.
-
-\section{Herramientas de Interpretabilidad para Modelos Transparentes}
-
-A diferencia de los modelos de caja negra, que requieren explicaciones post-hoc, los modelos transparentes permiten interpretar directamente sus decisiones debido a su estructura lógica. Sin embargo, aunque estos modelos, como los árboles de decisión (DT) y los Interpretable Decision Sets (IDS), ya son comprensibles, la claridad en la presentación y las visualizaciones influyen en cómo los usuarios perciben su interpretabilidad \cite{curso-xai, Rudin-2019}. La manera en que se presentan los resultados puede facilitar o dificultar la identificación de patrones, la detección de errores y la confianza en las decisiones.
-
-Para abordar este reto, se han desarrollado herramientas que facilitan tanto el análisis de los modelos transparentes como la exploración de cómo las visualizaciones y la estructura del modelo afectan la experiencia del usuario. Estas herramientas combinan enfoques visuales y técnicos que mejoran la comprensión y fomentan la confianza en las predicciones.
-
-A continuación, se describen herramientas clave en el campo de la inteligencia artificial explicable que facilitan el análisis y optimización de la interpretabilidad de modelos transparentes. Estas herramientas permiten evaluar cómo la presentación visual y la estructura de un modelo influyen en la percepción de interpretabilidad y la confianza del usuario en los sistemas de IA. Además, proporcionan una base sólida para estudiar los modelos transparentes de este trabajo, aplicando metodologías prácticas y enfoques visuales que mejoran tanto la claridad como la comprensión de los modelos de decisión.
-
-\subsection{InterpretML}
-
-InterpretML, propuesto por \textcite{nori2019interpretml}, es un marco de código abierto diseñado para proporcionar interpretabilidad tanto en modelos de caja blanca como en técnicas de explicabilidad post-hoc para modelos de caja negra. Este marco unifica diversas técnicas y permite a los investigadores y profesionales comparar diferentes enfoques de interpretabilidad a través de una API integrada y visualizaciones interactivas.
-
-InterpretML ofrece dos tipos principales de interpretabilidad:
-\begin{itemize}
-    \item Modelos de caja blanca: Estos modelos son transparentes desde su construcción, permitiendo que los usuarios comprendan directamente cómo cada característica influye en las predicciones. Ejemplos incluyen los modelos aditivos generalizados (GAM) y los modelos lineales. En la Figura \ref{fig:modularidad_ebm} se muestra un ejemplo de cómo la característica 'Edad' afecta la predicción en un modelo EBM, proporcionando una visualización clara de las relaciones entre características y resultados.
-    \item Explicabilidad para modelos de caja negra: Utilizando técnicas post-hoc como dependencia parcial, LIME y SHAP, InterpretML proporciona interpretaciones locales y globales de modelos más complejos, sin necesidad de conocer su estructura interna. La Figura \ref{fig:contexto_audiencia} compara visualizaciones generadas por GAM (arriba) y SHAP (abajo), mostrando cómo diferentes enfoques interpretativos pueden ajustarse a audiencias y contextos específicos.
-\end{itemize}
-
-Una de las contribuciones clave de InterpretML es el Explainable Boosting Machine (EBM), un modelo de caja blanca basado en un modelo aditivo generalizado (GAM) que utiliza técnicas modernas como bagging y boosting para ajustar cada característica iterativamente, reduciendo la correlación entre ellas. Esto permite que el EBM logre niveles de precisión comparables a los de modelos de caja negra como los bosques aleatorios o XGBoost, pero manteniendo la interpretabilidad total.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{include/EBMs.png}
-    \caption{Gráfico comparativo de precisión e inteligibilidad de modelos de aprendizaje automático, inspirado en un gráfico presentado por \cite{microsoftEBMvideo}.}
-    \label{fig:EBMs}
-\end{figure}
-
-El EBM es modular y permite visualizar cómo cada característica influye en las predicciones, facilitando la comprensión para los usuarios mediante gráficos claros, como los mostrados en la Figura \ref{fig:modularidad_ebm}, que ilustran la descomposición de una predicción individual y cómo cada característica contribuye de forma independiente.
-
-InterpretML presenta varias ventajas:
-\begin{itemize}
-    \item Facilidad de comparación: La API unificada facilita la comparación de diferentes algoritmos de interpretabilidad, con integración sencilla a frameworks como scikit-learn.
-    \item Interoperabilidad: Es compatible con herramientas como Jupyter Notebook y plotly, permitiendo una interacción intuitiva con los modelos y sus explicaciones.
-    \item Visualización interactiva: InterpretML ofrece un panel de control interactivo que permite explorar visualmente las explicaciones generadas, ayudando a los usuarios a entender fácilmente las contribuciones de cada característica.
-\end{itemize}
-
-InterpretML ha demostrado ser útil en áreas como la salud, las finanzas y la justicia, donde la interpretabilidad es crítica. Su capacidad para combinar precisión y transparencia lo convierte en una herramienta esencial en sistemas de alta responsabilidad.
-
-\subsection{Yellowbrick}
-
-Yellowbrick es una biblioteca de visualización diseñada para facilitar la evaluación e interpretación de modelos de aprendizaje automático creados con scikit-learn. Esta herramienta ofrece una amplia gama de visualizaciones que permiten a los usuarios entender mejor el comportamiento de los modelos, ayudando en la toma de decisiones y mejorando la interpretabilidad de los mismos \cite{bengfort_yellowbrick_2018}.
-
-Yellowbrick se enfoca en generar gráficos que muestran cómo las características y el rendimiento de los modelos afectan los resultados, lo cual es esencial para modelos transparentes como los DT y los IDs utilizados en este trabajo. Entre sus funcionalidades más destacadas se incluyen:
-
-\begin{itemize}
-    \item \textit{Visualización de la importancia de características}: Yellowbrick permite visualizar gráficamente la importancia relativa de las características dentro de un modelo. En el contexto de este TFM, esta funcionalidad es crucial para entender cómo las distintas características influyen en las predicciones de los modelos de decisión.
-    
-    \item \textit{Curvas de validación y curvas de aprendizaje}: Estas curvas permiten observar cómo el rendimiento del modelo varía según los valores de los hiperparámetros y cómo mejora a medida que recibe más datos de entrenamiento. Este tipo de visualización es útil para diagnosticar problemas de sobreajuste o subajuste, que impactan directamente en la interpretabilidad del modelo.
-
-    \item \textit{Matrices de confusión y reportes de clasificación}: Facilitan la visualización de la matriz de confusión, mostrando cómo el modelo clasifica correctamente e incorrectamente las instancias, lo que ayuda a comprender mejor cómo cada clase es manejada por el modelo. Esta herramienta es valiosa para modelos como Árboles de Decisión, ya que proporciona un análisis visual detallado de los resultados.
-
-    \item \textit{Curvas ROC y AUC}: Permiten evaluar el rendimiento de los modelos de clasificación, mostrando el compromiso entre la tasa de verdaderos positivos y la tasa de falsos positivos en diferentes umbrales de decisión. Estas curvas son especialmente útiles para evaluar la interpretabilidad de los modelos en términos de su capacidad para manejar errores en la clasificación.
-\end{itemize}
-
-Yellowbrick ofrece ventajas significativas, entre las que destaca su integración perfecta con scikit-learn, lo que permite a los usuarios generar visualizaciones sin una configuración adicional compleja. Además, proporciona una interfaz fácil de usar que se adapta tanto a principiantes como a expertos, facilitando la evaluación visual de los modelos de manera clara y concisa.
-
-
-
-\subsection{Anchors}
-Diseñada para generar reglas locales y fáciles de entender que explican de manera intuitiva las predicciones de un modelo. Este enfoque es ideal para modelos basados en reglas, como los IDS, ya que ofrece una explicación clara basada en ``anclas'' que describen el comportamiento de un modelo en una determinada predicción \cite{ribeiro2018anchors}.
-
-\subsection{DiCE}
-Una herramienta que genera explicaciones contrafactuales, ayudando a los usuarios a entender cómo pequeños cambios en las características de entrada podrían alterar la predicción. Aunque los modelos transparentes suelen ser interpretables, DiCE añade una capa de explicabilidad al permitir que los usuarios visualicen posibles escenarios alternativos para mejorar la comprensión de las decisiones del modelo \cite{arya2019one}.
-
-\section{Resumen}
-
-En este capítulo, se ha presentado una revisión de los enfoques y técnicas en Inteligencia Artificial Explicable (XAI), centrándose tanto en modelos de caja negra como en modelos transparentes. Se han discutido métodos para mejorar la interpretabilidad de los modelos de caja negra, como los modelos subrogados, la explicabilidad mediante ejemplos y las métricas del efecto de variables, resaltando cómo estos enfoques buscan hacer más comprensibles los modelos complejos cuyo funcionamiento interno no es directamente accesible.
-
-El capítulo también ha explorado estrategias específicas para optimizar la explicabilidad en modelos transparentes, como los Árboles de Decisión (DT) y los Interpretable Decision Sets (IDS). Se han analizado técnicas como la regularización LASSO para promover la \textit{sparsidad} y la simplificación estructural, que son esenciales para mejorar la claridad y comprensión de estos modelos.
-
-Además, se han presentado métricas cualitativas y cuantitativas para la evaluación de la interpretabilidad desde la perspectiva del usuario, proporcionando un marco para medir cómo los usuarios entienden y perciben los modelos de IA. Estas métricas, que incluyen la complejidad estructural del modelo y la capacidad de los usuarios para realizar predicciones basadas en él, permiten una evaluación integral del impacto de diferentes enfoques en la interpretabilidad, vinculando los fundamentos teóricos con su aplicación práctica.
-
-Esta revisión proporciona la base teórica y práctica necesaria para el desarrollo del cuestionario de evaluación de interpretabilidad propuesto en este trabajo, identificando las técnicas y métricas más relevantes para alcanzar los objetivos de investigación planteados y fortalecer la comprensión de los usuarios sobre los modelos utilizados.
-
-\chapter{Estado del Arte}
-
-La Inteligencia Artificial Explicable (XAI, por sus siglas en inglés de \emph{eXplainable Artificial Intelligence}) se refiere a un conjunto de métodos y técnicas diseñados para hacer que los modelos de aprendizaje automático sean comprensibles e interpretables para los usuarios humanos. El objetivo es permitir a los usuarios confiar y gestionar de manera efectiva los sistemas basados en aprendizaje automático \cite{gunning2019xai}. 
-
-En los últimos años, la comunidad científica se ha interesado en desarrollar estos métodos debido a la creciente utilización de la inteligencia artificial, lo que incrementa la necesidad de asegurar su uso ético y seguro. En este contexto, XAI se enfoca en cuatro objetivos principales \cite{curso-xai}:
-
-\begin{itemize}
-    \item \textit{Confianza y aceptación}. Para que los sistemas de IA sean ampliamente aceptados, es fundamental que los usuarios confíen en sus decisiones. Explicar cómo y por qué un modelo toma una decisión específica es crucial para construir esta confianza.
-    
-    \item \textit{Transparencia}. En muchas aplicaciones, especialmente en dominios sensibles como la medicina, la justicia y las finanzas, es esencial que los modelos de IA sean transparentes. Esto facilita no solo la detección y corrección de errores, sino también asegura que las decisiones sean justas y no discriminatorias.
-    
-    \item \textit{Cumplimiento normativo}. Diversas regulaciones, como el Reglamento General de Protección de Datos (GDPR) en Europa, exigen que las decisiones automatizadas sean explicables. Esto garantiza que los usuarios tengan derecho a una explicación clara y comprensible de cómo se toman las decisiones que les afectan.
-    
-    \item \textit{Mejora del modelo}. Comprender cómo funciona un modelo permite a los desarrolladores identificar áreas de mejora y ajustar los modelos para obtener mayor rendimiento y precisión.
-\end{itemize}
-
-\begin{table}[H]
-    \centering
-    \scriptsize % Reduce el tamaño de la fuente
-    \renewcommand{\arraystretch}{1.5} % Ajusta el espaciado entre filas
-    \begin{tabular}{p{3.5cm} p{5cm} p{5.8cm}}
-        \toprule
-        \textbf{Modelo} & \textbf{Enfoque} & \textbf{Características} \\
-        \midrule
-        Caja Negra & Modelos Subrogados & Uso de modelos más simples para aproximar las predicciones \\ 
-        & Métricas del Efecto & Evaluación del impacto de variables (locales y globales) \\ 
-        & Explicabilidad basada en Ejemplos & Uso de ejemplos específicos para explicar predicciones \\
-        \midrule
-        Transparentes & Intrínsecamente Interpretables & Diseñados para ser comprensibles desde su construcción \\
-        & Optimización para Interpretabilidad & Ajustados específicamente para mejorar la claridad y explicación \\ 
-        \bottomrule
-    \end{tabular}
-    \caption{Comparación de técnicas en XAI según el tipo de modelo.}
-    \label{fig:cuadro-xai}
-\end{table}
-
-Los métodos y técnicas desarrollados en XAI se pueden agrupar en dos categorías principales según el tipo de modelo: modelos de caja negra y modelos transparentes \cite{curso-xai}. Estas categorías se subdividen en técnicas específicas, como se muestra en el Cuadro \ref{fig:cuadro-xai}.
-
-
-\section{XAI para Modelos de Caja Negra}
-
-Aunque este trabajo no se enfoca en métodos aplicables a modelos de caja negra, es importante mencionarlos para brindar un panorama completo de la Inteligencia Artificial Explicable (XAI). En general, un \emph{modelo de caja negra} es aquel cuyo funcionamiento interno es desconocido o no es interpretable. Esto puede deberse a que su acceso está restringido (por propiedad intelectual) o porque su mecanismo de predicción es inherentemente complejo, como en el caso de las redes neuronales \cite{curso-xai, Rudin-2019}.
-
-Existen tres tipos principales de técnicas para abordar la explicabilidad en modelos de caja negra \cite{curso-xai}:
-
-\begin{itemize}
-    \item \textit{Modelos subrogados}: Se refiere a la creación de un modelo más sencillo e interpretable que imita las predicciones del modelo de caja negra. Este modelo subrogado puede aproximar el comportamiento del modelo original de manera \textit{local} (para un subconjunto específico de datos de entrada) o \textit{global} (para el conjunto completo de datos).
-    
-    \item \textit{Explicabilidad basada en ejemplos}: Busca explicar una predicción específica proporcionando ejemplos similares y contraejemplos. Esto ayuda al usuario a entender cómo diferentes características influyen en una predicción en particular.
-    
-    \item \textit{Métricas del efecto de las variables sobre la predicción}: Estas métricas buscan cuantificar la influencia de cada variable de entrada en las predicciones del modelo. Algunas técnicas destacadas en esta categoría son:
-    \begin{itemize}
-        \item \textit{LIME (Local Interpretable Model-agnostic Explanations)}: Genera explicaciones locales al identificar cuáles características influyen en una predicción específica y su efecto (positivo o negativo) \cite{ribeiro2016should}.
-        \item \textit{SHAP (SHapley Additive exPlanations)}: Calcula la contribución de cada característica a la predicción utilizando conceptos de la Teoría de Juegos \cite{lundberg2017unified}.
-        \item \textit{Eliminación de características}: Consiste en eliminar una característica del modelo (generalmente, reentrenando el modelo) para observar cómo cambian las predicciones sin dicha característica.
-        \item \textit{Ocultamiento de características}: Similar a la eliminación, pero se ocultan parcial o totalmente algunas características, utilizado principalmente en redes neuronales convolucionales para entender qué partes de los datos son más relevantes.
-    \end{itemize}
-\end{itemize}
-
-
-\section{XAI para Modelos Transparentes}
-
-Los modelos transparentes son aquellos que no solo exponen el mecanismo mediante el cual generan las predicciones, sino que este proceso es fácilmente comprensible para un usuario humano. Un ejemplo clásico es la regresión lineal: es fácil entender cómo este modelo genera una predicción (mediante multiplicaciones por coeficientes y una suma), y también es fácil interpretar el significado de estos coeficientes (el valor de cada coeficiente indica el efecto de la variable correspondiente sobre la predicción).
-
-En principio, se presume que los modelos transparentes son interpretables, es decir, que un humano puede entender el significado de los elementos del proceso de decisión y sus relaciones, como en el ejemplo de la regresión lineal. Sin embargo, en la práctica, un modelo transparente puede ser tan complejo que sobrepase la capacidad cognitiva de una persona. Por ejemplo, una regresión lineal con mil variables resulta difícil de interpretar, ya que es complejo entender el impacto de tantos factores en una predicción.
-
-Para mejorar la interpretabilidad de estos modelos, se pueden aplicar técnicas de regularización como la \textit{Lasso}, que promueven la \textit{sparsidad} al reducir el número de variables que tienen un impacto significativo en las predicciones. Esta técnica puede observarse en la Figura \ref{fig:lasso}, donde se ilustra cómo Lasso minimiza la inclusión de variables irrelevantes, mejorando así la simplicidad y la claridad del modelo.
-
-De esta forma, se facilita que el usuario enfoque su atención solo en las características más importantes, lo que mejora la comprensión general del modelo.
-
-
-
-
-
-
-\section{Métricas de Evaluación de la Explicabilidad en Modelos Transparentes}
-
-Esta sección discute brevemente métricas cuantitativas propuestas en la literatura para evaluar y mejorar la explicabilidad de modelos transparentes. Aunque estas métricas se justifican intuitivamente, es importante destacar que su efectividad puede depender del contexto específico del modelo y del usuario, como se ha señalado en los fundamentos teóricos (ver Figuras \ref{fig:lasso}, \ref{fig:decision_tree}, y \ref{fig:parsimonia}).
-
-\subsection{Número de Características}
-
-El \textit{número de características} utilizadas por un modelo es una de las métricas más comúnmente aplicadas para medir la explicabilidad \cite{Lin-2020, lakkaraju-2016, Poursabzi-2021}. Este concepto se relaciona estrechamente con la \textit{sparsidad}, ilustrada en la Figura \ref{fig:lasso}, que busca reducir el número de parámetros no nulos en un modelo para facilitar la comprensión del papel específico de cada variable en las predicciones. En modelos como las regresiones lineales (y otros modelos aditivos, como los \textit{Generalized Additive Models}), es posible promover la \textit{sparsidad} introduciendo un término de regularización en la función de pérdida, tal como se explicó en los fundamentos teóricos.
-
-Esta idea también se extiende a otros tipos de modelos, como los árboles de decisión. Por ejemplo, \cite{Hu-2019, Lin-2020} proponen el uso de técnicas de regularización para favorecer árboles de decisión \textit{esparsos} (del inglés \textit{sparse}), utilizando programación dinámica y teoremas que garantizan un desempeño mínimo. Este enfoque promueve la simplicidad y la \textit{parsimonia}, representada en la Figura \ref{fig:parsimonia}, utilizando la menor cantidad de variables posible sin comprometer el rendimiento.
-
-En el caso de conjuntos de decisión, \cite{lakkaraju-2016} proponen tres métricas: una para penalizar la función de pérdida basada en el número de reglas individuales en el conjunto de decisiones, otra para penalizar la longitud de las reglas, y una última para maximizar la cobertura de una regla (es decir, aplicarla al mayor número posible de datos). Este enfoque de minimización también se alinea con los principios de \textit{parsimonia} y \textit{modularidad} (ver Figura \ref{fig:parsimonia}), al reducir la complejidad del modelo mientras se mantiene la efectividad de la predicción.
-
-\subsection{Complejidad de la Estructura del Modelo}
-
-La \textit{complejidad de la estructura} de un modelo transparente también afecta su interpretabilidad, como se discutió en los fundamentos teóricos en relación con la \textit{simulabilidad} (ver Figura \ref{fig:decision_tree}). Diferentes configuraciones estructurales pueden hacer que un modelo sea más o menos fácil de explicar.
-
-Por ejemplo, en los árboles de decisión, tanto el número de ramas por nodo como la profundidad del árbol influyen en su interpretabilidad. Un árbol con muchas ramas o de gran profundidad puede ser difícil de entender, contraviniendo el principio de \textit{simulabilidad} (ver Figura \ref{fig:decision_tree}), que sugiere que los modelos deben ser fáciles de reproducir y comprender por humanos. Para mitigar esto, \cite{Lin-2020} recomienda el uso de árboles binarios (cada nodo tiene solo dos ramas), y la programación dinámica para limitar la profundidad del árbol, controlando así la complejidad del modelo.
-
-Para los conjuntos de decisión, \cite{lakkaraju-2016} sugiere el uso de listas simples de reglas, sin anidación, ya que se considera que son más fáciles de entender que las secuencias de reglas anidadas. Esta preferencia por la simplicidad y la claridad se alinea con la noción de \textit{parsimonia} (ver Figura \ref{fig:parsimonia}), donde se favorecen las soluciones más simples y directas.
-
-
-
 
 \section{Métricas para la Evaluación Humana de la Interpretabilidad}
 
@@ -1093,11 +851,8 @@ En la siguiente tabla se muestra un ejemplo adaptado del artículo original, don
     \label{tab:anchors-pos}
 \end{table}
 
-
 \noindent
 En este ejemplo, el modelo predice si la palabra ``play'' es un verbo o un sustantivo dependiendo de la palabra que la precede, generando reglas locales que son fáciles de comprender y aplicar. Estos \textit{anchors} proporcionan una explicación clara sobre el comportamiento del modelo en casos específicos, lo que mejora la confianza y la interpretabilidad para los usuarios finales.
-
-
 
 \subsection{DiCE: Explicaciones Contrafactuales Diversas}
 
@@ -1145,8 +900,6 @@ Aunque DiCE es eficaz para generar explicaciones contrafactuales diversas, no ga
 
 DiCE es una herramienta poderosa para la IA explicable, permitiendo a los usuarios explorar cómo pequeños cambios en las entradas pueden alterar los resultados del modelo, y proporcionando una visión más completa del comportamiento del modelo a través de explicaciones diversas.
 
-
-
 \section{Resumen}
 
 En este estado del arte se han revisado las principales herramientas y enfoques de XAI, con especial énfasis en los modelos transparentes. También, se han explorado herramientas clave como InterpretML y Yellowbrick, que permiten visualizar y analizar la interpretabilidad de estos modelos, facilitando su comprensión por parte de los usuarios.
@@ -1161,10 +914,9 @@ En esta sección se describe la propuesta de este TFM, que consiste en el desarr
 
 El código de implementación de los modelos, el preprocesamiento de datos y el análisis de interpretabilidad se encuentra en un notebook de Google Colab disponible en \cite{vargas2024interpretability}, donde se detallan todos los pasos involucrados en el proceso.
 
-
 \section{Datos utilizados}
 
-El conjunto de datos utilizado proviene del \textit{UCI Machine Learning Repository} es \cite{cortez2014student} y recoge información académica, social y demográfica de estudiantes de secundaria en dos escuelas portuguesas, centrado en las asignaturas de Matemáticas y Lengua Portuguesa. En este trabajo, solo se considera la asignatura de Matemáticas.
+El conjunto de datos utilizado proviene del \textit{UCI Machine Learning Repository} bajo el nombre \textit{Student Performance Dataset} \cite{cortez2014student}. Este dataset recoge información académica, social y demográfica de estudiantes de secundaria en dos escuelas portuguesas, centrado en las asignaturas de Matemáticas y Lengua Portuguesa. En este trabajo, solo se considera la asignatura de Matemáticas.
 
 Este conjunto de datos es adecuado para evaluar la interpretabilidad de los modelos de clasificación debido a la variedad de características sociales, demográficas y académicas que pueden influir en el rendimiento académico. Además, la estructura del problema como una tarea de clasificación binaria permite una evaluación clara de los modelos propuestos en términos de su capacidad para predecir el éxito o fracaso de los estudiantes en la asignatura de Matemáticas.
 
@@ -1225,7 +977,6 @@ El objetivo del modelo es predecir si un estudiante aprobará la asignatura de M
     \label{tab:math-data-clases}
 \end{table}
 
-
 \subsection{Implementación de los Modelos}
 Para la evaluación de la interpretabilidad, se implementaron dos tipos de modelos:
 
@@ -1234,22 +985,6 @@ Para la evaluación de la interpretabilidad, se implementaron dos tipos de model
     
     \item \textit{Conjuntos Interpretables de Decisión (IDS):} Los IDS se componen de reglas conjuntas que facilitan una explicación comprensible del modelo. En este trabajo, se evalúa su capacidad para generar decisiones claras y fáciles de entender para los usuarios.
 \end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \subsection{Diseño del Cuestionario}
 El cuestionario fue diseñado para recoger la percepción de los usuarios sobre la interpretabilidad de los modelos descritos anteriormente. Las preguntas fueron clasificadas en las siguientes categorías:
