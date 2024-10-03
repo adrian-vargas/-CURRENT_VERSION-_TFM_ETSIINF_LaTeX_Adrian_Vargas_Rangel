@@ -1,0 +1,22 @@
+\documentclass[a4paper,11pt]{book}
+
+% Importar el preámbulo
+\input{include/Preambulo}
+
+% Importar datos del TFM
+\input{secciones/_DatosTFM}
+
+% Documento
+\begin{document}
+    \input{include/Portada}
+    \frontmatter
+    \input{secciones/00_Resumen}
+    \tableofcontents
+    \mainmatter
+    \input{secciones/01_Introduccion}
+    \input{secciones/02_Desarrollo}
+    \input{secciones/03_Resultados}
+    \printbibliography
+    \appendix
+    \input{secciones/05_Anexos}
+\end{document}

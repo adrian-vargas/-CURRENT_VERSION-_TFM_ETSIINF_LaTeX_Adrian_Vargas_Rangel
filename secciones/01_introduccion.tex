@@ -1,0 +1,56 @@
+\chapter{Introducción}
+
+En este capítulo se ofrece una visión general del contexto de la investigación. En la Sección 1.1, se aborda la motivación que ha llevado a la realización de este proyecto, explicando las razones que justifican su relevancia. La Sección 1.2 describe el objetivo principal y los objetivos específicos que se persiguen, mientras que la Sección 1.3 plantea la hipótesis que se pretende validar con este estudio. Finalmente, en la Sección 1.4 se presenta la estructura del documento como guía sobre el contenido de cada uno de los capítulos.
+
+\section{Motivación}
+
+Al cursar la asignatura "Inteligencia Artificial Explicable" el inicio de mi carrera en inteligencia artificial, 
+
+
+Mi interés por la inteligencia artificial explicable se confirmó al cursar dicha asignatura en el Máster de Inteligencia Artificial, impartida por los profesores Bojan Mihaljevic y Esteban García Cuesta, ya que ha surgido una creciente preocupación dentro de la comunidad científica y de la sociedad en general por la falta de transparencia en muchos sistemas de IA, especialmente en sectores críticos como la medicina, la educación y la justicia. En estos ámbitos, las decisiones automatizadas pueden tener consecuencias significativas y, a veces, irreversibles, lo que hace imperativa la necesidad de modelos más comprensibles y justos \cite{samek-2019}.
+
+La urgencia de desarrollar modelos interpretables se hace evidente a la luz de casos recientes como el escándalo de los subsidios para el cuidado infantil en los Países Bajos en 2018. Un sistema automatizado de detección de fraudes, implementado por la Agencia de Impuestos neerlandesa, etiquetó incorrectamente a más de 26,000 familias, en su mayoría de origen migrante, como fraudulentas \cite{amnesty-2021, bbc-2021}. Estas acusaciones erróneas dieron lugar a demandas de devolución de sumas de dinero que a veces alcanzaron hasta 100.000 euros \cite{euronews-2021}, provocando graves consecuencias sociales y económicas, como la pérdida de empleo y vivienda, así como un aumento de problemas de salud mental entre los afectados.
+
+Otro ejemplo que subraya la importancia de la interpretabilidad es el caso Loomis \cite{bbc-2016}. En este caso, el uso del software COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) en el sistema judicial de Estados Unidos, diseñado para predecir la probabilidad de reincidencia de un acusado, fue criticado por su falta de transparencia y explicabilidad. Un estudio realizado por ProPublica en 2016 reveló que COMPAS no solo era menos preciso de lo que se afirmaba, sino que también presentaba sesgos raciales significativos, clasificando a personas negras como de mayor riesgo de reincidencia en comparación con personas blancas con historiales similares \cite{propublica-2016}.
+
+Estos incidentes destacan la necesidad de modelos de inteligencia artificial que sean no solo técnicamente eficientes, sino también transparentes e interpretables para evitar decisiones injustas.
+
+Basándose en el estudio ``Interpretable Decision Sets (IDS)" de Lakkaraju et al. \cite{lakkaraju-2016}, esta investigación se centra en evaluar la interpretabilidad de modelos explicables desde la perspectiva de los usuarios finales. 
+
+\section{Objetivo}
+
+El objetivo de este Trabajo de Fin de Máster (TFM) es desarrollar un cuestionario para evaluar la interpretabilidad de modelos de decisión, específicamente de los modelos \textit{Interpretable Decision Sets} (IDS) y los árboles de decisión (DT), en el contexto de la inteligencia artificial. Este cuestionario, inspirado en el estudio “Interpretable Decision Sets: A Joint Framework for Description and Prediction” \cite{lakkaraju-2016}, será utilizado para investigar cómo diversos factores, como la estructura del modelo y la presentación visual de los resultados, influyen en la percepción de interpretabilidad y en la capacidad de los usuarios para detectar errores.
+
+\section{Objetivos Específicos}
+
+\begin{enumerate}
+    \item Diseñar un cuestionario para evaluar la percepción de interpretabilidad de los modelos \textit{Interpretable Decision Sets} (IDS) y los árboles de decisión (DT).
+    \item Implementar el cuestionario utilizando un conjunto de datos sobre el rendimiento académico de estudiantes en matemáticas \cite{cortez-2014}.
+    \item Analizar cómo factores como la estructura del modelo, la ambigüedad de la información y la confianza en las visualizaciones afectan la percepción de interpretabilidad.
+    \item Desarrollar una herramienta que sirva como base para futuros estudios en el campo de la inteligencia artificial explicable.
+\end{enumerate}
+
+
+\section{Hipótesis}
+
+Se plantea que los modelos IDS serán percibidos como más interpretables que los árboles de decisión, especialmente en situaciones de ambigüedad. No obstante, la confianza excesiva en las visualizaciones puede llevar a una comprensión superficial, afectando la capacidad de los usuarios para identificar errores correctamente. Por tanto, se sugiere que tanto la estructura del modelo como la presentación de resultados influyen en la percepción de interpretabilidad y precisión.
+
+\section{Estructura del Documento}
+
+El presente trabajo se organiza en los siguientes capítulos:
+
+\begin{itemize}
+    \item Capítulo 1: Introducción. Este capítulo proporciona una introducción general al tema del TFM, incluyendo el contexto, la motivación del estudio, el objetivo principal, los objetivos específicos, la hipótesis, y la estructura general del documento.
+    
+    \item Capítulo 2: Fundamentos Teóricos. Se revisan los conceptos teóricos clave relacionados con la interpretabilidad en la inteligencia artificial, así como una descripción de los modelos que se evaluarán, como los Interpretable Decision Sets (IDS) y los Árboles de Decisión (DT). Incluye definiciones de términos, explicaciones de técnicas y metodologías relevantes, y una discusión sobre la importancia de la interpretabilidad en la inteligencia artificial.
+    
+    \item Capítulo 3: Estado del Arte. Este capítulo presenta una revisión de los estudios relevantes en el campo, destacando investigaciones previas relacionadas con la evaluación de la interpretabilidad de modelos de IA, los desafíos asociados y los enfoques utilizados en estudios similares. Se discute cómo el presente trabajo se sitúa en el contexto de la literatura existente.
+    
+    \item Capítulo 4: Metodología. Se describe el diseño del cuestionario, la selección del conjunto de datos (rendimiento académico de los estudiantes en matemáticas), y el proceso de desarrollo de las herramientas utilizadas. También se incluyen los métodos de análisis de datos empleados para evaluar la interpretabilidad de los modelos.
+    
+    \item Capítulo 5: Resultados. En este capítulo se presentan los resultados obtenidos del cuestionario, incluyendo el análisis de las respuestas recopiladas, la interpretación de los resultados y los hallazgos significativos relacionados con la hipótesis.
+    
+    \item Capítulo 6: Discusión. Se interpretan los resultados en el contexto de los objetivos e hipótesis planteados al inicio. Se discute la importancia de los hallazgos, se exploran las limitaciones del estudio y se sugieren posibles mejoras o direcciones para futuras investigaciones.
+    
+    \item Capítulo 7: Conclusiones. Este capítulo ofrece un resumen de las principales conclusiones del estudio, destacando las contribuciones del TFM al campo de la inteligencia artificial explicable y la evaluación de modelos interpretables. También se incluyen recomendaciones para futuras investigaciones.
+\end{itemize}

@@ -1,0 +1,18 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is './build/plantilla_TFM.blg'
+[375] biber-MSWIN64:340> INFO - === 
+[493] Biber.pm:420> INFO - Reading './build/plantilla_TFM.bcf'
+[935] Biber.pm:994> INFO - Found 44 citekeys in bib section 0
+[964] Biber.pm:4463> INFO - Processing section 0
+[985] Biber.pm:4654> INFO - Looking for bibtex file 'include/referencias.bib' for section 0
+[1085] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1298] bibtex.pm:1519> INFO - Found BibTeX data source 'include/referencias.bib'
+[1922] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1922] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1922] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'es-ES'
+[1980] bbl.pm:676> INFO - Writing './build/plantilla_TFM.bbl' with encoding 'UTF-8'
+[2029] bbl.pm:779> INFO - Output to ./build/plantilla_TFM.bbl
+[2029] Biber.pm:131> WARN - Duplicate entry key: 'gunning2019xai' in file 'include/referencias.bib', skipping ...
+[2030] Biber.pm:131> WARN - Duplicate entry key: 'bengfort_yellowbrick_2018' in file 'include/referencias.bib', skipping ...
+[2030] Biber.pm:131> WARN - legacy month field '13--18 Jul' in entry 'Lin-2020' is not an integer - this will probably not sort properly.
+[2030] Biber.pm:133> INFO - WARNINGS: 3

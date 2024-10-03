@@ -1,0 +1,74 @@
+\chapter{Resultados y conclusiones}
+
+\section{Desafíos en la Implementación}
+
+Durante la realización de este Trabajo Fin de Máster (TFM), se encontraron varios desafíos significativos que impactaron en el desarrollo y la implementación del proyecto. Uno de los mayores retos fue la implementación del modelo Interpretable Decision Sets (IDS). La librería pyIDS no ofrecía una clasificación adecuada ya que clasificaba todos los casos como no aprobados, lo que llevó a la decisión de desarrollar el modelo IDS desde cero para manejar este problema. La falta de documentación y recursos disponibles sobre la implementación de IDS dificultó este proceso, requiriendo un esfuerzo considerable para lograr una implementación funcional y precisa del algoritmo.
+
+Debido a lo anterior, no fue posible completar a tiempo la preparación del cuestionario para su implementación dentro del entorno universitario. Este problema se agravó por el hecho de que la mayoría de los estudiantes estaban en fechas próximas a terminar su curso, lo que impidió la realización de pruebas con un número suficiente de participantes. Sin embargo, en un principio se desarrolló un pequeño script de Python para Moodle localmente, con la intención de facilitar su posible implementación futura.
+
+Otro desafío importante fue la limitación de recursos computacionales disponibles para el entrenamiento de los modelos involucrados, específicamente para IDS. El procesamiento de datos y el entrenamiento de múltiples modelos interpretables y no interpretables requería una capacidad de cómputo considerable. Estas limitaciones afectaron tanto la velocidad del desarrollo como la posibilidad de realizar experimentos más amplios y exhaustivos.
+
+\section{Implementación del Cuestionario en Moodle}
+
+Aunque no fue posible implementar el cuestionario en el entorno de Moodle de la Universidad, se desarrolló un script en Moodle localmente para su posible implementación en el futuro. Moodle fue elegido por varias razones:
+\begin{itemize}
+    \item Plataforma Robusta: Moodle ofrece una plataforma robusta y bien documentada para la administración de cuestionarios, lo que facilita el desarrollo e implementación.
+    \item Escalabilidad: Permite la recopilación y gestión eficiente de grandes volúmenes de datos, lo cual es crucial para estudios con numerosos participantes.
+    \item Accesibilidad: La plataforma es accesible para los participantes desde cualquier dispositivo con conexión a internet, aumentando la probabilidad de participación.
+\end{itemize}
+
+\section{Diseño del Experimento}
+
+El experimento fue diseñado para evaluar la interpretabilidad de los modelos Decision Tree e Interpretable Decision Sets utilizando el dataset de matemáticas del UCI Machine Learning Repository. Para evaluar la interpretabilidad, se desarrolló un cuestionario para su futura implementación que los participantes deberán completar, proporcionando sus percepciones sobre la interpretabilidad de cada modelo.
+
+\begin{itemize}
+    \item Prueba Estadística: La prueba t se puede aplicará a los datos del cuestionario para determinar si hay una diferencia significativa en la interpretabilidad percibida entre los diferentes modelos utilizados. Esto se hará comparando las medias de las calificaciones de interpretabilidad entre los modelos. Esta propuesta se basa en las siguientes razones:
+    \begin{itemize}
+        \item Evaluación de Diferencias de Medias: La prueba t es adecuada para comparar las medias de dos grupos, en este caso, la interpretabilidad percibida de dos modelos diferentes (en nuestro caso, Decision Tree e Interpretable Decision Sets).
+        \item Simplicidad y Eficiencia: La prueba t es relativamente sencilla de implementar y entender, lo que facilita su aplicación y la interpretación de los resultados.
+    \end{itemize}
+    \item Hipótesis Nula: La hipótesis nula del experimento es que no hay diferencia significativa en la interpretabilidad percibida entre los diferentes modelos de inteligencia artificial evaluados. Esto se formuló para probar si la percepción de interpretabilidad es independiente del modelo utilizado.
+    
+    \item Tamaño de la Muestra: Para asegurar la validez estadística del experimento, se decidió utilizar el mismo tamaño de muestra que Lakkaraju, es decir, 47 participantes. Esta decisión se basó en las siguientes razones:
+    \begin{itemize}
+        \item Utilizar el mismo tamaño de muestra permite una comparabilidad directa con el estudio de Lakkaraju, lo cual es relevante para validar y contrastar los resultados obtenidos en este TFM.
+        \item Dada la disponibilidad limitada de participantes, un tamaño de muestra de 47 estudiantes es factible y suficiente para obtener resultados estadísticamente significativos dentro del contexto de este estudio.
+    \end{itemize}
+\end{itemize}
+
+\section{Cuestionario Utilizado en el Experimento}
+
+El cuestionario diseñado incluyó los siguientes tipos de preguntas para evaluar la interpretabilidad de los modelos:
+
+\begin{itemize}
+    \item Preguntas de Exactitud: Se pidió a los participantes que realizaran predicciones basadas en las observaciones proporcionadas y compararan las predicciones de ambos modelos (Decision Tree e IDS).
+    \item Preguntas de Detección de Error: Se presentaron observaciones y predicciones realizadas por los modelos, y se pidió a los participantes que evaluaran si las predicciones eran correctas.
+    \item Métricas de Interpretabilidad Indirectas: Se incluyó el cuestionario NASA-TLX para evaluar la carga cognitiva y se midió el tiempo utilizado por los participantes para responder cada pregunta.
+\end{itemize}
+
+El cuestionario consistió en un total de 20 preguntas distribuidas de la siguiente manera:
+\begin{itemize}
+    \item 12 Preguntas de Exactitud:
+    \begin{itemize}
+        \item 6 preguntas resueltas por ambos modelos (DT e IDS).
+        \item 3 preguntas ambiguas para evaluar la capacidad de manejo de incertidumbre.
+        \item 3 preguntas exclusivas para cada modelo para destacar diferencias en la estructura y enfoque.
+    \end{itemize}
+    \item 8 Preguntas de Detección de Error:
+    \begin{itemize}
+        \item 4 preguntas resueltas por ambos modelos.
+        \item 2 preguntas ambiguas para evaluar cómo los modelos manejan la incertidumbre y errores potenciales.
+        \item 2 preguntas exclusivas para cada modelo.
+    \end{itemize}
+\end{itemize}
+
+Cada sección del cuestionario fue diseñada para obtener una visión integral de la interpretabilidad y precisión de los modelos desde diferentes ángulos, proporcionando así una evaluación completa y detallada.
+
+\section{Conclusiones}
+Esta experiencia resalta la importancia de disponer de recursos computacionales adecuados y una planificación detallada para la preparación de experimentos que involucren participación humana. Asimismo, la creación de soluciones personalizadas, como el desarrollo propio del algoritmo IDS, que puede ser necesaria cuando las herramientas disponibles no cumplen con los requisitos específicos del proyecto.
+
+A pesar de los desafíos mencionados, se lograron objetivos importantes como el desarrollo del cuestionario para evaluar la interpretabilidad. Además, se propone una implementación del cuestionario en la plataforma Moodle para su futura aplicación en la Universidad Politécnica de Madrid. 
+
+El código de este proyecto se encuentra en el siguiente repositorio: 
+
+\href{https://github.com/adrian-vargas/MasterThesis-IDS}{https://github.com/adrian-vargas/MasterThesis-IDS}
